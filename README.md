@@ -9,7 +9,7 @@ The code offers a walkthrough of resource optimization methods, including option
 
 The idea is inspired by coroutines and async background tasks from prior experience. Proudly developed.
 
-# `vllm_async.py`
+# `vllm_async_vr.py`
 
 A small asynchronous smoke-test/demo client for a vLLM server exposing the OpenAI-compatible Chat Completions API. It submits country-capital questions to a served chat model and prints one generated answer.
 
@@ -52,7 +52,7 @@ CUDA_VISIBLE_DEVICES=0 vllm serve meta-llama/Llama-3.1-8B-Instruct \
 Wait until vLLM reports that the server is ready. In another terminal, run the client:
 
 ```bash
-python code/vllm_async.py
+python code/vllm_async_vr.py
 ```
 
 A successful run prints one generated answer, for example:
@@ -64,7 +64,7 @@ Example response: paris
 The exact response is model-dependent. To capture output in a log:
 
 ```bash
-python code/vllm_async.py > eval.log 2>&1
+python code/vllm_async_vr.py > eval.log 2>&1
 ```
 
 The script has no command-line options. Its model name, server URL, prompts, and token limit must be changed in the source to use different values.
